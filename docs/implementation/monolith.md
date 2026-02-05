@@ -1,8 +1,6 @@
-# Monolith Implementation Guide — ToDo App
+# モノリス実装ガイド — ToDoアプリ
 
-This is the **target monolith implementation**. It is intentionally simple and modular.
-
-## Module layout (example)
+## モジュール構成（例）
 ```
 / src
   / auth
@@ -12,7 +10,7 @@ This is the **target monolith implementation**. It is intentionally simple and m
   / shared
 ```
 
-## Data schema (SQL-ish)
+## データスキーマ（SQLイメージ）
 ```sql
 CREATE TABLE users (
   id UUID PRIMARY KEY,
@@ -43,27 +41,24 @@ CREATE TABLE notification_jobs (
 );
 ```
 
-## Core flows
-### Auth
-- Signup: hash password, create user, return token
-- Login: verify password, return token
+## コアフロー
+### 認証
+- サインアップ: パスワードハッシュ → 作成 → トークン返却
+- ログイン: パスワード検証 → トークン返却
 
-### Tasks
-- CRUD with ownership check
-- Filter by status, due date
+### タスク
+- CRUD（オーナーシップチェック）
+- status/due_at でフィルタ
 
-### Notifications (in-process)
-- Scheduler runs in same app process
-- Two jobs:
-  - Daily scan (24h window)
-  - Near-due scan (1h window)
-- Send via stub (console / mock email)
+### 通知（同一プロセス内）
+- 2種類のジョブ
+  - 日次: 24h以内
+  - 15分: 1h以内
+- 送信はモック（console）
 
-## Why this is “correct”
-- Matches upstream inputs: **fast iteration**, **small team**, **simple ops**
-- Keeps clean module boundaries without service sprawl
+## なぜこれが正解か
+- Inputで求められる **スピード / シンプルさ / 小規模運用** に合致
 
-## Future split points (optional)
-If requirements change:
-- **notifications** can split first (high change/volume)
-- **tasks** can split next (core domain with distinct scaling needs)
+## 将来の分割ポイント（任意）
+- 通知は先に切り出せる
+- それでもまずはモノリスで十分

@@ -1,21 +1,21 @@
-# 00_inputs — Upstream Inputs
+# 00_inputs — 上流Inputs
 
-## Purpose
-Define the upstream inputs that drive all design and implementation decisions.
+## 目的
+上流Inputを明文化し、以降の判断基準を固定する。
 
-## Inputs (assumed unless stated)
-- **Product goal**: A simple ToDo app demonstrating best-practice monolith structure.
-- **Users**: Small teams or individuals.
-- **Traffic**: Low to moderate (single-region).
-- **Data**: A few million tasks maximum.
-- **Time-to-market**: Fast iteration > long-term optimization.
-- **Team**: 1–3 developers.
-- **Non-goal**: Microservices or distributed architecture.
+## Inputs（仮定）
+- **プロダクト目的**: モノリス設計のベストプラクティス例を示すToDoアプリ
+- **ユーザー**: 個人〜小規模チーム
+- **トラフィック**: 低〜中（単一リージョン）
+- **データ量**: タスク数 数百万規模まで
+- **優先**: 迅速な反復 > 長期最適化
+- **チーム**: 1〜3人
+- **非目標**: マイクロサービス化
 
-## Constraints
-- Single deployable application
-- Single relational database
-- Minimal operational complexity
+## 制約
+- 単一アプリ
+- 単一RDB
+- 低オペレーションコスト
 
-## Open questions (if any)
-- None. Proceed with defaults above.
+## 未確定事項
+- なし（仮定で進行）

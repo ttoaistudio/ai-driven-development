@@ -1,24 +1,24 @@
-# 10_requirements — Functional & Non‑functional Requirements
+# 10_requirements — 要件
 
-## Functional requirements
-- **User management**
-  - Sign up, login, logout
-  - Basic profile (name, email)
-- **Task management**
-  - Create / Read / Update / Delete
-  - Status: todo / doing / done
-  - Due date, tags, notes
-- **Notifications**
-  - Daily due reminders
-  - Immediate reminder when due date is within 1 hour
+## 機能要件
+- **ユーザー管理**
+  - サインアップ / ログイン / ログアウト
+  - プロフィール（名前・メール）
+- **タスク管理**
+  - CRUD
+  - ステータス: todo / doing / done
+  - 期限 / タグ / メモ
+- **通知**
+  - 毎日リマインド
+  - 期限1時間前リマインド
 
-## Non‑functional requirements
-- **Simplicity**: One codebase, one DB, minimal services.
-- **Observability**: Structured logs, basic metrics, error tracking hooks.
-- **Security baseline**: Password hashing, auth tokens, input validation.
-- **Maintainability**: Clear module boundaries inside the monolith.
+## 非機能要件
+- **シンプルさ**: 単一コードベース + 単一DB
+- **観測性**: 構造化ログ / 基本メトリクス
+- **セキュリティ基礎**: パスワードハッシュ / 入力バリデーション
+- **保守性**: 明確なモジュール分割
 
-## Out of scope
-- Multi-tenant org features
-- Real-time collaboration
-- Multi-region deployment
+## スコープ外
+- マルチテナント
+- リアルタイム協調
+- マルチリージョン

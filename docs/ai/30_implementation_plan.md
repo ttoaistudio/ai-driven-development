@@ -1,33 +1,33 @@
-# 30_implementation_plan — How to build it (Monolith)
+# 30_implementation_plan — 実装計画（モノリス）
 
-## Step 1: Project setup
-- Choose framework (FastAPI or Express)
-- Add lint, format, env config
-- Set up DB connection and migrations
+## Step 1: セットアップ
+- Node + Express
+- 環境変数 / ログ / Lint
 
-## Step 2: Core modules
-- `auth` (signup/login)
-- `users` (profile)
-- `tasks` (CRUD)
-- `notifications` (in-process scheduler)
+## Step 2: コアモジュール
+- `auth`（サインアップ/ログイン）
+- `users`（プロフィール）
+- `tasks`（CRUD）
+- `notifications`（スケジューラ）
 
-## Step 3: Data layer
-- Define models (users, tasks, notification_jobs)
-- Add indexes on `tasks.user_id`, `tasks.due_at`
+## Step 3: データ層
+- users / tasks / notification_jobs
+- インデックス: `tasks.user_id`, `tasks.due_at`
 
-## Step 4: API layer
-- REST endpoints per module
-- Input validation + error handling
+## Step 4: API層
+- ルーティング
+- 入力バリデーション
+- エラーハンドリング
 
-## Step 5: Notifications
-- Daily and near‑due jobs
-- Send via stubbed email/console
+## Step 5: 通知
+- 日次 & 15分スキャン
+- 送信はスタブ
 
-## Step 6: Observability
-- Structured logging
-- Basic metrics placeholders
+## Step 6: 観測性
+- 構造化ログ
+- 基本メトリクス（プレースホルダ）
 
-## Definition of done
-- API passes basic CRUD flows
-- Notifications fire at correct times
-- Docs reflect final structure
+## Done条件
+- CRUDが一通り動作
+- 期限リマインドが動く
+- ドキュメントが一致している

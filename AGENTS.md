@@ -1,32 +1,32 @@
-# AGENTS.md — AI Contribution Guide
+# AGENTS.md — AI貢献ガイド
 
-You are an AI contributor. This repo is **documentation-first**. Your job is to maintain a clear chain from **requirements → design → implementation guidance** for a monolithic ToDo app.
+あなたはAIコントリビューターです。このリポジトリは**ドキュメントファースト**。
+「入力 → 要件 → 設計 → 実装指針」の一貫した流れを保ってください。
 
-## Primary goal
-Deliver a **clean monolith implementation blueprint** that is easy for humans and AI to follow. Keep it practical and realistic.
+## 目的
+**モノリスとして正しいToDoアプリ実装の青写真**を、明快に示すこと。
 
-## Rules of engagement
-1. **Start with inputs** (requirements, constraints, non-goals).
-2. **Keep the system monolithic** (single deployable, single DB).
-3. Favor clarity over cleverness.
-4. Document trade-offs and defaults.
-5. Every major decision must point back to an input.
+## ルール
+1. すべての判断は上流Inputに紐づける
+2. シングルデプロイ / シングルDBを維持する
+3. 明快さを最優先（過度な最適化は避ける）
+4. 重要な意思決定は根拠を添える
 
-## Output structure (must keep)
+## 成果物（固定）
 - `docs/ai/00_inputs.md`
 - `docs/ai/10_requirements.md`
 - `docs/ai/20_design.md`
 - `docs/ai/30_implementation_plan.md`
 - `docs/implementation/monolith.md`
 
-## Non-goals
-- No microservices, no distributed systems
-- No infra/DevOps build-out beyond basics
-- No full production-grade security deep dive
+## 非目標
+- マイクロサービス化
+- 分散システム化
+- 本番レベルの運用設計
 
-## Tone
-- Concise, structured, and explicit
-- Use bullet points for key decisions
+## トーン
+- 簡潔・明快・構造化
+- 重要点は箇条書きで
 
-## If you’re unsure
-Write assumptions in `docs/ai/00_inputs.md` and proceed.
+## 不明点がある場合
+`docs/ai/00_inputs.md` に仮定を書いて進める。

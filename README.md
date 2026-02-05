@@ -1,24 +1,30 @@
-# AI-Driven Development — ToDo Monolith
+# AI-Driven Development — ToDoモノリス
 
-This repo demonstrates **how a ToDo app should be implemented as a monolith**, plus the **AI-facing documentation** that leads to that implementation. It is intentionally small and explicit to serve as a reference.
+このリポジトリは、**ToDoアプリをモノリスでどう実装すべきか**を示す「設計〜実装ガイド」と、
+その結論に至る**AI向けドキュメンテーション**をまとめたものです。
 
-## What’s inside
-- `AGENTS.md` — AI guidance for contributions and decision-making
-- `docs/ai/` — AI-facing documentation (requirements → design → implementation plan)
-- `docs/implementation/` — monolith implementation guidance
+## 中身
+- `AGENTS.md` — AI向けの貢献ガイド
+- `docs/ai/` — 入力 → 要件 → 設計 → 実装計画
+- `docs/implementation/` — モノリス実装の指針
+- `src/` — Node/Expressの最小実装サンプル
 
-## Quick start (human)
-This project is documentation-first. There is no runtime code yet. The goal is to show *how to implement* the monolith and the reasoning that gets you there.
+## クイックスタート（サンプルAPI起動）
+```bash
+npm install
+npm run dev
+```
 
-## Recommended stack (reference)
-- API: FastAPI or Express
-- DB: PostgreSQL
-- Auth: JWT (or session)
-- Notification: background job within the same app
+## サンプルAPI
+- `POST /auth/signup`
+- `POST /auth/login`
+- `GET /users/me`
+- `POST /tasks`
+- `GET /tasks`
+- `GET /tasks/:id`
+- `PATCH /tasks/:id`
+- `DELETE /tasks/:id`
 
-## Scope of the ToDo app (reference)
-- Users: sign up / login / profile
-- Tasks: CRUD, status, due date, tags
-- Notifications: due reminders (email/push mocked)
+> ※ サンプルコードは「概念を伝えるための最小実装」です。
 
-See `docs/ai/` for the full decision trail and `docs/implementation/` for the target architecture.
+詳しくは `docs/ai/` と `docs/implementation/` を参照してください。
