@@ -1,33 +1,26 @@
-# 30_implementation_plan — 実装計画（モノリス）
+# 30_implementation_plan — 再現性のための実装計画
 
-## Step 1: セットアップ
-- Node + Express
-- 環境変数 / ログ / Lint
+## Step 1: ひな形を固定
+- ディレクトリ構成を作成
+- 命名規約を明文化
 
-## Step 2: コアモジュール
-- `auth`（サインアップ/ログイン）
-- `users`（プロフィール）
-- `tasks`（CRUD）
-- `notifications`（スケジューラ）
+## Step 2: Domain
+- Entity / ValueObject を作る
+- Domain Service（必要最小限）
 
-## Step 3: データ層
-- users / tasks / notification_jobs
-- インデックス: `tasks.user_id`, `tasks.due_at`
+## Step 3: Application
+- UseCase を作る
+- DTO を定義する
+- Repository Port（Interface）を定義
 
-## Step 4: API層
-- ルーティング
-- 入力バリデーション
-- エラーハンドリング
+## Step 4: Infrastructure
+- Repository実装（DB）
+- Notification実装
 
-## Step 5: 通知
-- 日次 & 15分スキャン
-- 送信はスタブ
+## Step 5: Interface
+- HTTP Controller
+- Presenter
 
-## Step 6: 観測性
-- 構造化ログ
-- 基本メトリクス（プレースホルダ）
-
-## Done条件
-- CRUDが一通り動作
-- 期限リマインドが動く
-- ドキュメントが一致している
+## Step 6: バリデーション
+- 依存方向が崩れていないか確認
+- 命名規約と構成の一致を確認
