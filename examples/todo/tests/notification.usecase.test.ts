@@ -1,8 +1,8 @@
 // テストケース
 import { describe, it, expect } from 'vitest';
-import { ScheduleNotificationsUseCase } from '../src/application/notification/ScheduleNotificationsUseCase.ts';
-import { InMemoryTaskRepository } from '../src/infrastructure/persistence/InMemoryTaskRepository.ts';
-import { TaskEntity } from '../src/domain/task/TaskEntity.ts';
+import { ScheduleNotificationsUseCase } from '../application/notification/ScheduleNotificationsUseCase.ts';
+import { InMemoryTaskRepository } from '../infrastructure/persistence/InMemoryTaskRepository.ts';
+import { TaskEntity } from '../domain/task/TaskEntity.ts';
 
 class SpyNotificationPort {
   dueSoonCalls: string[] = [];

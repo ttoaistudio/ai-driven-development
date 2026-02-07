@@ -1,9 +1,9 @@
 // テストケース
 import { describe, it, expect } from 'vitest';
-import { LoginUseCase } from '../src/application/auth/LoginUseCase.ts';
-import { InMemoryUserRepository } from '../src/infrastructure/persistence/InMemoryUserRepository.ts';
-import { AuthService } from '../src/application/auth/AuthService.ts';
-import { UserEntity } from '../src/domain/user/UserEntity.ts';
+import { LoginUseCase } from '../application/auth/LoginUseCase.ts';
+import { InMemoryUserRepository } from '../infrastructure/persistence/InMemoryUserRepository.ts';
+import { AuthService } from '../application/auth/AuthService.ts';
+import { UserEntity } from '../domain/user/UserEntity.ts';
 
 
 describe('LoginUseCaseの挙動', () => {

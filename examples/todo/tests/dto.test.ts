@@ -1,7 +1,7 @@
 // テストケース
 import { describe, it, expect } from 'vitest';
-import { TaskDTO } from '../src/application/task/TaskDTO.ts';
-import { UserDTO } from '../src/application/user/UserDTO.ts';
+import { TaskDTO } from '../application/task/TaskDTO.ts';
+import { UserDTO } from '../application/user/UserDTO.ts';
 
 interface TaskShape {
   id: string;
