@@ -1,3 +1,4 @@
+// テストケース
 import { describe, it, expect } from 'vitest';
 import { CreateUserUseCase } from '../src/application/user/CreateUserUseCase.ts';
 import { InMemoryUserRepository } from '../src/infrastructure/persistence/InMemoryUserRepository.ts';

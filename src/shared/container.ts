@@ -24,3 +24,5 @@ export const buildContainer = () => {
     scheduleNotificationsUseCase: new ScheduleNotificationsUseCase({ taskRepository, notificationPort }),
   };
 };
+
+export type Container = ReturnType<typeof buildContainer>

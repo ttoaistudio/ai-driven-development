@@ -3,8 +3,9 @@ import { TaskController } from './TaskController.ts';
 import { UserController } from './UserController.ts';
 import { AuthController } from './AuthController.ts';
 import { NotificationController } from './NotificationController.ts';
+import { Container } from '../../shared/container.ts';
 
-export const buildRouter = (container) => {
+export const buildRouter = (container: Container) => {
   const router = express.Router();
   const task = new TaskController(container);
   const user = new UserController(container);
