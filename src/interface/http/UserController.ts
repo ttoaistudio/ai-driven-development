@@ -1,4 +1,4 @@
-import { UserDTO } from '../../application/user/UserDTO.js';
+import { UserDTO } from '../../application/user/UserDTO.ts';
 
 export class UserController {
   constructor({ createUserUseCase, userRepository }) {

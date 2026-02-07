@@ -1,5 +1,5 @@
 import express from 'express';
-import { buildRouter } from './router.js';
+import { buildRouter } from './router.ts';
 
 export const createServer = (container) => {
   const app = express();

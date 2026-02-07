@@ -1,8 +1,8 @@
 import express from 'express';
-import { TaskController } from './TaskController.js';
-import { UserController } from './UserController.js';
-import { AuthController } from './AuthController.js';
-import { NotificationController } from './NotificationController.js';
+import { TaskController } from './TaskController.ts';
+import { UserController } from './UserController.ts';
+import { AuthController } from './AuthController.ts';
+import { NotificationController } from './NotificationController.ts';
 
 export const buildRouter = (container) => {
   const router = express.Router();

@@ -1,4 +1,4 @@
-import { UserRepository } from '../../application/user/UserRepository.js';
+import { UserRepository } from '../../application/user/UserRepository.ts';
 
 export class InMemoryUserRepository extends UserRepository {
   constructor() {

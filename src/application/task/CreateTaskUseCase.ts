@@ -1,5 +1,5 @@
-import { TaskEntity } from '../../domain/task/TaskEntity.js';
-import { TaskStatus } from '../../domain/task/TaskStatus.js';
+import { TaskEntity } from '../../domain/task/TaskEntity.ts';
+import { TaskStatus } from '../../domain/task/TaskStatus.ts';
 
 export class CreateTaskUseCase {
   constructor({ taskRepository }) {

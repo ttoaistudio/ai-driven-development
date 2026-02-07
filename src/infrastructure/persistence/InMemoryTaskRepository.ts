@@ -1,4 +1,4 @@
-import { TaskRepository } from '../../application/task/TaskRepository.js';
+import { TaskRepository } from '../../application/task/TaskRepository.ts';
 
 export class InMemoryTaskRepository extends TaskRepository {
   constructor() {

@@ -1,4 +1,4 @@
-import { AuthDTO } from '../../application/auth/AuthDTO.js';
+import { AuthDTO } from '../../application/auth/AuthDTO.ts';
 
 export class AuthController {
   constructor({ loginUseCase }) { this.loginUseCase = loginUseCase; }

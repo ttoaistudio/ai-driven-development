@@ -1,4 +1,4 @@
-import { TaskDTO } from '../../application/task/TaskDTO.js';
+import { TaskDTO } from '../../application/task/TaskDTO.ts';
 
 export class TaskController {
   constructor({ createTaskUseCase, taskRepository }) {

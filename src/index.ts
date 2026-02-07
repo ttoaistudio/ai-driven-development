@@ -1,5 +1,5 @@
-import { createServer } from './interface/http/server.js';
-import { buildContainer } from './shared/container.js';
+import { createServer } from './interface/http/server.ts';
+import { buildContainer } from './shared/container.ts';
 
 const app = createServer(buildContainer());
 const PORT = process.env.PORT || 3000;
