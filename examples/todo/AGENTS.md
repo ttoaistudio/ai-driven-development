@@ -1,7 +1,7 @@
-# src/AGENTS.md — 実装指示
+# examples/todo/AGENTS.md — 実装指示
 
 ## 目的
-- Clean Architecture に従い **同じ構成/命名/責務** を再現する
+- ToDoアプリ例を **Clean Architecture** で再現する
 
 ## ルール
 - レイヤー: Domain / Application / Infrastructure / Interface

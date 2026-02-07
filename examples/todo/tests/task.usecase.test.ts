@@ -1,7 +1,7 @@
 // テストケース
 import { describe, it, expect } from 'vitest';
-import { CreateTaskUseCase } from '../application/task/CreateTaskUseCase.ts';
-import { InMemoryTaskRepository } from '../infrastructure/persistence/InMemoryTaskRepository.ts';
+import { CreateTaskUseCase } from '../src/application/task/CreateTaskUseCase.ts';
+import { InMemoryTaskRepository } from '../src/infrastructure/persistence/InMemoryTaskRepository.ts';
 
 
 describe('Taskユースケースの挙動', () => {

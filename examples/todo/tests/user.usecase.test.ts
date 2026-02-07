@@ -1,7 +1,7 @@
 // テストケース
 import { describe, it, expect } from 'vitest';
-import { CreateUserUseCase } from '../application/user/CreateUserUseCase.ts';
-import { InMemoryUserRepository } from '../infrastructure/persistence/InMemoryUserRepository.ts';
+import { CreateUserUseCase } from '../src/application/user/CreateUserUseCase.ts';
+import { InMemoryUserRepository } from '../src/infrastructure/persistence/InMemoryUserRepository.ts';
 
 
 describe('Userユースケースの挙動', () => {

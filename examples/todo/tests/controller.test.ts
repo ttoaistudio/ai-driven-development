@@ -1,14 +1,14 @@
 // テストケース
 import { describe, it, expect } from 'vitest';
 import { Request, Response } from 'express';
-import { TaskController } from '../interface/http/TaskController.ts';
-import { UserController } from '../interface/http/UserController.ts';
-import { AuthController } from '../interface/http/AuthController.ts';
-import { CreateTaskUseCase } from '../application/task/CreateTaskUseCase.ts';
-import { TaskRepository } from '../application/task/TaskRepository.ts';
-import { CreateUserUseCase } from '../application/user/CreateUserUseCase.ts';
-import { UserRepository } from '../application/user/UserRepository.ts';
-import { LoginUseCase } from '../application/auth/LoginUseCase.ts';
+import { TaskController } from '../src/interface/http/TaskController.ts';
+import { UserController } from '../src/interface/http/UserController.ts';
+import { AuthController } from '../src/interface/http/AuthController.ts';
+import { CreateTaskUseCase } from '../src/application/task/CreateTaskUseCase.ts';
+import { TaskRepository } from '../src/application/task/TaskRepository.ts';
+import { CreateUserUseCase } from '../src/application/user/CreateUserUseCase.ts';
+import { UserRepository } from '../src/application/user/UserRepository.ts';
+import { LoginUseCase } from '../src/application/auth/LoginUseCase.ts';
 
 interface MockResponse extends Response {
   statusCode: number;
