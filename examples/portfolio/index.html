@@ -85,39 +85,51 @@
         <h2>デモ：質問に答えるだけで完成</h2>
         <p class="lead">入力の手間を最小化し、必要な情報だけを引き出します。</p>
         <div class="demo-grid">
-          <div class="demo-flow">
+          <form class="demo-flow" id="demoForm">
             <div class="step">
               <div class="badge">Q1</div>
               <div>
                 <h4>これまでの職種と年数は？</h4>
-                <p>例：Webディレクター 3年 / データ分析 2年</p>
+                <input name="roles" placeholder="例：Webディレクター 3年 / データ分析 2年" required />
               </div>
             </div>
             <div class="step">
               <div class="badge">Q2</div>
               <div>
                 <h4>成果を数字で教えてください</h4>
-                <p>例：CVRを1.8→2.6%に改善</p>
+                <input name="impact" placeholder="例：CVRを1.8→2.6%に改善" required />
               </div>
             </div>
             <div class="step">
               <div class="badge">Q3</div>
               <div>
                 <h4>今後やりたい領域は？</h4>
-                <p>例：SaaSのグロース、プロダクト企画</p>
+                <input name="next" placeholder="例：SaaSのグロース、プロダクト企画" required />
               </div>
             </div>
-          </div>
+            <div class="step">
+              <div class="badge">Q4</div>
+              <div>
+                <h4>得意なスキル・強みは？</h4>
+                <input name="strength" placeholder="例：企画推進 / データ分析" required />
+              </div>
+            </div>
+            <div class="step">
+              <div class="badge">Q5</div>
+              <div>
+                <h4>希望する業界は？</h4>
+                <input name="industry" placeholder="例：SaaS / Fintech / AI" required />
+              </div>
+            </div>
+            <div class="demo-actions">
+              <button type="submit" class="primary">デモ結果を生成</button>
+              <button type="button" id="demoReset" class="secondary">リセット</button>
+            </div>
+          </form>
           <div class="demo-output">
-            <div class="output-card">
+            <div class="output-card" id="demoOutput">
               <h4>アウトプット例</h4>
-              <ul>
-                <li>履歴書・職務経歴書の完成版</li>
-                <li>市場価値：年収レンジ 520〜740万円</li>
-                <li>相性の良い企業：SaaS / Fintech / AI</li>
-                <li>強みと弱みの整理</li>
-                <li>次のキャリアアクション提案</li>
-              </ul>
+              <p class="muted">質問に答えると、ここに結果が表示されます。</p>
             </div>
           </div>
         </div>
