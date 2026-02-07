@@ -1,16 +1,16 @@
+import { TaskRepository } from '../task/TaskRepository.ts';
+import { NotificationPort } from './NotificationPort.ts';
+
 export class ScheduleNotificationsUseCase {
-  constructor({ taskRepository, notificationPort }) {
-    this.taskRepository = taskRepository;
-    this.notificationPort = notificationPort;
+  constructor(private readonly deps: { taskRepository: TaskRepository; notificationPort: NotificationPort }) {}
+
+  async dueSoon(cutoff: Date): Promise<void> {
+    const tasks = await this.deps.taskRepository.findDueBefore(cutoff);
+    await this.deps.notificationPort.sendDueSoon(tasks);
   }
 
-  async dueSoon(cutoff) {
-    const tasks = await this.taskRepository.findDueBefore(cutoff);
-    await this.notificationPort.sendDueSoon(tasks);
-  }
-
-  async dueDaily(cutoff) {
-    const tasks = await this.taskRepository.findDueBefore(cutoff);
-    await this.notificationPort.sendDueDaily(tasks);
+  async dueDaily(cutoff: Date): Promise<void> {
+    const tasks = await this.deps.taskRepository.findDueBefore(cutoff);
+    await this.deps.notificationPort.sendDueDaily(tasks);
   }
 }

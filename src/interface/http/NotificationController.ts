@@ -1,17 +1,18 @@
-export class NotificationController {
-  constructor({ scheduleNotificationsUseCase }) {
-    this.scheduleNotificationsUseCase = scheduleNotificationsUseCase;
-  }
+import { Request, Response } from 'express';
+import { ScheduleNotificationsUseCase } from '../../application/notification/ScheduleNotificationsUseCase.ts';
 
-  dueSoon = async (req, res) => {
+export class NotificationController {
+  constructor(private readonly deps: { scheduleNotificationsUseCase: ScheduleNotificationsUseCase }) {}
+
+  dueSoon = async (_req: Request, res: Response) => {
     const cutoff = new Date(Date.now() + 60 * 60 * 1000);
-    await this.scheduleNotificationsUseCase.dueSoon(cutoff);
+    await this.deps.scheduleNotificationsUseCase.dueSoon(cutoff);
     res.json({ ok: true });
   };
 
-  dueDaily = async (req, res) => {
+  dueDaily = async (_req: Request, res: Response) => {
     const cutoff = new Date(Date.now() + 24 * 60 * 60 * 1000);
-    await this.scheduleNotificationsUseCase.dueDaily(cutoff);
+    await this.deps.scheduleNotificationsUseCase.dueDaily(cutoff);
     res.json({ ok: true });
   };
 }

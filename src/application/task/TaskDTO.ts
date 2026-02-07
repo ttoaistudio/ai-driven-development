@@ -1,4 +1,6 @@
-export const TaskDTO = (task) => ({
+import { TaskEntity } from '../../domain/task/TaskEntity.ts';
+
+export const TaskDTO = (task: TaskEntity) => ({
   id: task.id,
   user_id: task.userId,
   title: task.title,

@@ -10,8 +10,8 @@ class SpyNotificationPort {
   async sendDueDaily(tasks: TaskEntity[]) { this.dueDailyCalls = tasks.map(t => t.id); }
 }
 
-describe('ScheduleNotificationsUseCase', () => {
-  it('sends due-soon tasks only', async () => {
+describe('ScheduleNotificationsUseCaseの挙動', () => {
+  it('期限1時間以内のみ通知する', async () => {
     const repo = new InMemoryTaskRepository();
     const port = new SpyNotificationPort();
     const usecase = new ScheduleNotificationsUseCase({ taskRepository: repo, notificationPort: port });
@@ -27,7 +27,7 @@ describe('ScheduleNotificationsUseCase', () => {
     expect(port.dueSoonCalls).toEqual(['t1']);
   });
 
-  it('sends daily tasks within cutoff', async () => {
+  it('24時間以内のみ日次通知する', async () => {
     const repo = new InMemoryTaskRepository();
     const port = new SpyNotificationPort();
     const usecase = new ScheduleNotificationsUseCase({ taskRepository: repo, notificationPort: port });

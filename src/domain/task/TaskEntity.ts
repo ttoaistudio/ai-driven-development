@@ -1,5 +1,23 @@
+export interface TaskProps {
+  id: string;
+  userId: string;
+  title: string;
+  status: string;
+  dueAt?: string | null;
+  tags?: string[];
+  notes?: string;
+}
+
 export class TaskEntity {
-  constructor({ id, userId, title, status, dueAt = null, tags = [], notes = '' }) {
+  id: string;
+  userId: string;
+  title: string;
+  status: string;
+  dueAt: string | null;
+  tags: string[];
+  notes: string;
+
+  constructor({ id, userId, title, status, dueAt = null, tags = [], notes = '' }: TaskProps) {
     this.id = id;
     this.userId = userId;
     this.title = title;

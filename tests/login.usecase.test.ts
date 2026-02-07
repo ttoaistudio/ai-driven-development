@@ -5,8 +5,8 @@ import { AuthService } from '../src/application/auth/AuthService.ts';
 import { UserEntity } from '../src/domain/user/UserEntity.ts';
 
 
-describe('LoginUseCase', () => {
-  it('returns token when credentials match', async () => {
+describe('LoginUseCaseの挙動', () => {
+  it('正しい認証でトークンが返る', async () => {
     const repo = new InMemoryUserRepository();
     const auth = new AuthService();
     const user = new UserEntity({ id: 'u1', name: 't', email: 'a@b.com', passwordHash: auth.hash('pw') });
@@ -17,7 +17,7 @@ describe('LoginUseCase', () => {
     expect(token).toBe('token-u1');
   });
 
-  it('returns null when user does not exist', async () => {
+  it('存在しないユーザーでnullを返す', async () => {
     const repo = new InMemoryUserRepository();
     const auth = new AuthService();
     const usecase = new LoginUseCase({ userRepository: repo, authService: auth });
@@ -25,7 +25,7 @@ describe('LoginUseCase', () => {
     expect(token).toBeNull();
   });
 
-  it('returns null when password is wrong', async () => {
+  it('パスワード誤りでnullを返す', async () => {
     const repo = new InMemoryUserRepository();
     const auth = new AuthService();
     const user = new UserEntity({ id: 'u1', name: 't', email: 'a@b.com', passwordHash: auth.hash('pw') });

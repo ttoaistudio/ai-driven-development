@@ -1,4 +1,6 @@
+import { TaskEntity } from '../../domain/task/TaskEntity.ts';
+
 export class NotificationPort {
-  async sendDueSoon(tasks) { throw new Error('NotImplemented'); }
-  async sendDueDaily(tasks) { throw new Error('NotImplemented'); }
+  async sendDueSoon(_tasks: TaskEntity[]): Promise<void> { throw new Error('NotImplemented'); }
+  async sendDueDaily(_tasks: TaskEntity[]): Promise<void> { throw new Error('NotImplemented'); }
 }

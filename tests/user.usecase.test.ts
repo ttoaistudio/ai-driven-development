@@ -3,8 +3,8 @@ import { CreateUserUseCase } from '../src/application/user/CreateUserUseCase.ts'
 import { InMemoryUserRepository } from '../src/infrastructure/persistence/InMemoryUserRepository.ts';
 
 
-describe('User UseCases', () => {
-  it('creates and retrieves user', async () => {
+describe('Userユースケースの挙動', () => {
+  it('ユーザーを作成して取得できる', async () => {
     const repo = new InMemoryUserRepository();
     const usecase = new CreateUserUseCase({ userRepository: repo });
     await usecase.execute({ id: 'u1', name: 't', email: 'a@b.com', passwordHash: 'hash(pw)' });
@@ -13,13 +13,13 @@ describe('User UseCases', () => {
     expect(found?.email).toBe('a@b.com');
   });
 
-  it('returns null for missing user', async () => {
+  it('存在しないユーザーはnullを返す', async () => {
     const repo = new InMemoryUserRepository();
     const found = await repo.findById('missing');
     expect(found).toBeNull();
   });
 
-  it('finds by email', async () => {
+  it('メールで検索できる', async () => {
     const repo = new InMemoryUserRepository();
     const usecase = new CreateUserUseCase({ userRepository: repo });
     await usecase.execute({ id: 'u1', name: 't', email: 'a@b.com', passwordHash: 'hash(pw)' });

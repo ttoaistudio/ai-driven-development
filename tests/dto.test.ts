@@ -2,10 +2,19 @@ import { describe, it, expect } from 'vitest';
 import { TaskDTO } from '../src/application/task/TaskDTO.ts';
 import { UserDTO } from '../src/application/user/UserDTO.ts';
 
+interface TaskShape {
+  id: string;
+  userId: string;
+  title: string;
+  status: string;
+  dueAt: string | null;
+  tags: string[];
+  notes: string;
+}
 
-describe('DTOs', () => {
-  it('TaskDTO maps fields', () => {
-    const dto = TaskDTO({
+describe('DTOの変換', () => {
+  it('TaskDTOがフィールドを正しく変換する', () => {
+    const task: TaskShape = {
       id: 't1',
       userId: 'u1',
       title: 'x',
@@ -13,7 +22,8 @@ describe('DTOs', () => {
       dueAt: '2025-01-01T00:00:00Z',
       tags: ['a'],
       notes: 'n'
-    } as any);
+    };
+    const dto = TaskDTO(task);
     expect(dto).toEqual({
       id: 't1',
       user_id: 'u1',
@@ -25,8 +35,9 @@ describe('DTOs', () => {
     });
   });
 
-  it('UserDTO maps fields', () => {
-    const dto = UserDTO({ id: 'u1', name: 't', email: 'a@b.com' } as any);
+  it('UserDTOがフィールドを正しく変換する', () => {
+    const user = { id: 'u1', name: 't', email: 'a@b.com' };
+    const dto = UserDTO(user);
     expect(dto).toEqual({ id: 'u1', name: 't', email: 'a@b.com' });
   });
 });

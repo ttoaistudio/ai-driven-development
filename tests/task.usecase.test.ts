@@ -3,8 +3,8 @@ import { CreateTaskUseCase } from '../src/application/task/CreateTaskUseCase.ts'
 import { InMemoryTaskRepository } from '../src/infrastructure/persistence/InMemoryTaskRepository.ts';
 
 
-describe('Task UseCases', () => {
-  it('creates and retrieves task', async () => {
+describe('Taskユースケースの挙動', () => {
+  it('タスクを作成して取得できる', async () => {
     const repo = new InMemoryTaskRepository();
     const usecase = new CreateTaskUseCase({ taskRepository: repo });
     await usecase.execute({ id: 't1', userId: 'u1', title: 'task' });
@@ -13,13 +13,13 @@ describe('Task UseCases', () => {
     expect(found?.title).toBe('task');
   });
 
-  it('returns null for missing task', async () => {
+  it('存在しないタスクはnullを返す', async () => {
     const repo = new InMemoryTaskRepository();
     const found = await repo.findById('missing');
     expect(found).toBeNull();
   });
 
-  it('filters by user', async () => {
+  it('ユーザーでフィルタできる', async () => {
     const repo = new InMemoryTaskRepository();
     const usecase = new CreateTaskUseCase({ taskRepository: repo });
     await usecase.execute({ id: 't1', userId: 'u1', title: 'a' });
